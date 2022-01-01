@@ -17,13 +17,11 @@ app.use(expressLayouts)
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false}))
 
 
-mongoose.connect(process.env.DATABASE_URL, {
+mongoose.connect('mongodb+srv://user:sanskar@cluster0.abi1o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
     useNewUrlParser: true , useUnifiedTopology: true})
 const db = mongoose.connection
 db.on('error' ,error => console.error(error))
 db.once('open', () =>console.log('connected to mongoose'))
-console.log('name')
-
 
 const homeRouter = require('./routers/home')
 app.use('/home',homeRouter)
