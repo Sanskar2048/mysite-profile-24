@@ -17,9 +17,11 @@ app.use(bodyParser.urlencoded({ limit: '10mb', extended: false}))
 
 
 
-mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser:true})
+mongoose.connect(process.env.DATABASE_URL, {
+    useNewUrlParser: true })
 const db = mongoose.connection
-db.on('open', ()=>{ console.log('database connected')})
+db.on('error' ,error => console.error(error))
+db.once('open', () =>console.log('connected to mongoose'))
 
 
 const homeRouter = require('./routers/home')
