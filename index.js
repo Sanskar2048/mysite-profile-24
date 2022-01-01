@@ -11,7 +11,7 @@ const app = express();
 app.set('view engine' , 'ejs')
 app.set('views', __dirname+'/views')
 app.use(express.static(__dirname + '/public'));
-app.set('layout', 'layout')
+app.set('layout', 'layout');
 app.use(expressLayouts)
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false}))
 
