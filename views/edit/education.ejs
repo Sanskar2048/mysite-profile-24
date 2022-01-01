@@ -1,0 +1,5 @@
+<h1>Education</h1>
+<% param.forEach(edu => { %>
+    <div><%= edu.title %></div><a href = 'education/delete/<%=edu.id%>'>delete</a><br>
+<% }) %>
+<a href="education/new">new project</a>

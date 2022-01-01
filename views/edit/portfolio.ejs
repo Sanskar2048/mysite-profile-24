@@ -1,0 +1,5 @@
+<h1>Portfolio</h1>
+<% param.forEach(port => { %>
+    <div><%= port.title %></div><a href = 'portfolio/delete/<%=port.id%>'>delete</a><br>
+<% }) %>
+<a href="portfolio/new">new project</a>

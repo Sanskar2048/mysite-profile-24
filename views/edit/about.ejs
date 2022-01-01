@@ -1,0 +1,29 @@
+<h1>About</h1>
+<form action="/edit/about" method="POST" >
+    <label for="fname">First name: </label>
+    <input type="text" id="fname" name="fname" value="<%= param == null ? '' : param.first_name%>"><br>
+    <label for="lname">Last name: </label>
+    <input type="text" id="lname" name="lname" value="<%= param == null ? '' : param.first_name%>"><br>
+    <label for="date_of_birth">Date of birth: </label>
+    <input type="date" id="dob" name="date_of_birth" value="<%= param == null ? '' : param.dob.toISOString().split('T')[0]%>"><br>
+    <label for="email">Enter your email: </label>
+    <input type="email" id="email" name="email" value="<%= param == null ? '' : param.email%>"><br>
+    <label for="gender">Gender: </label>
+    <input type="radio" id="male" name="gender" value="male" <%= param == null ? '' : param.gender == 'male' ? 'checked' : ''%>>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female" <%= param == null ? '' : param.gender == 'female' ? 'checked' : ''%>>
+    <label for="female">Female</label><br>
+    <label for="contact">Contact: </label>
+    <input type="number" id="contact" name="phone" value="<%= param == null ? '' : param.contact%>"><br>
+    <label for="cv">CV link: </label>
+    <input type="text" id="cv" name="cv" value="<%= param == null ? '' : param.cv%>"><br>
+    <label for="photo">Photo link: </label>
+    <input type="text" id="photo" name="photo" value="<%= param == null ? '' : param.photo%>"><br>
+    <label for="status">Status: </label>
+    <input type="text" id="status" name="status" value="<%= param == null ? '' : param.status%>"><br>
+    <label for="position">Position: </label>
+    <input type="text" id="position" name="position" value="<%= param == null ? '' : param.position%>"><br><br>
+    
+    <input type="submit" value="Submit">
+</form> 
+  
