@@ -18,11 +18,15 @@ app.use(bodyParser.urlencoded({ limit: '10mb', extended: false}))
 
 
 mongoose.connect(process.env.DATABASE_URL, {
-    useNewUrlParser: true , useUnifiedTopology: true}).then(()=>{
+    useNewUrlParser: true , 
+    useUnifiedTopology: true
+}).then(()=>{
         const db = mongoose.connection
         db.on('error' ,error => console.error(error))
         db.once('open', () =>console.log('connected to mongoose'))
-    })
+}).catch((err)=>{
+    console.log(err)
+})
 
 
 
